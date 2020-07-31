@@ -158,23 +158,45 @@ def temp_start(start):
     """Fetch the temp data that matches
        the path variable supplied by the user, or a 404 if not."""
 
-    #convert input to a date
+    #make sure the date format is correct
+    try:
 
-    start_date_convert = dt.datetime.strptime(start, '%Y-%m-%d')
-    query_date_start = start_date_convert.date()
+        #convert input to a date
+        start_date_convert = dt.datetime.strptime(start, '%Y-%m-%d')
+        query_date_start = start_date_convert.date()
 
-    data_start = dt.date(2010, 1,1)
-    data_end = dt.date(2017, 8,23)
+    #if date format is wrong
+    except ValueError:
+        return jsonify({"error": "Date format incorrect"}), 404
+
+    # Create our session (link) from Python to the DB
+    session = Session(engine)
+
+    #find first date in the database:
+    first_date = session.query(Measurement.date).order_by(Measurement.date).first()
+
+    # source: https://stackoverflow.com/questions/23324266/converting-string-to-date-object-without-time-info
+    #Create datetime object and then convert to date object
+    first_date_convert = dt.datetime.strptime(first_date[0], '%Y-%m-%d')
+    first_date_convert = first_date_convert.date()
+
+    #find last date in the database:
+    last_date = session.query(Measurement.date).order_by(Measurement.date.desc()).first()
+
+    # source: https://stackoverflow.com/questions/23324266/converting-string-to-date-object-without-time-info
+    #Create datetime object and then convert to date object
+    last_date_convert = dt.datetime.strptime(last_date[0], '%Y-%m-%d')
+    last_date_convert = last_date_convert.date()
 
     #determine if user date is within database range
-    if (query_date_start < data_start) | (query_date_start > data_end) :
-        
+    if (query_date_start < first_date_convert) | (query_date_start > last_date_convert) :
+         #close session
+        session.close()
         #return error message
         return jsonify({"error": "Date not found."}), 404
     
     else:
 
-        session = Session(engine)
         #lowest temp recorded for most active station
         lowest_temp = session.query(func.min(Measurement.tobs)).\
                 filter(Measurement.date >= query_date_start).all()
@@ -207,27 +229,48 @@ def temp_start_end (start, end):
     """Fetch the temp data that matches
        the path variable supplied by the user, or a 404 if not."""
 
-    #convert inputs to dates
-    #start date
-    start_date_convert = dt.datetime.strptime(start, '%Y-%m-%d')
-    query_date_start = start_date_convert.date()
+    #make sure the date format is correct
+    try:
+        #convert inputs to dates
+        #start date
+        start_date_convert = dt.datetime.strptime(start, '%Y-%m-%d')
+        query_date_start = start_date_convert.date()
    
-    #end date
-    end_date_convert = dt.datetime.strptime(end, '%Y-%m-%d')
-    query_date_end = end_date_convert.date()
+        #end date
+        end_date_convert = dt.datetime.strptime(end, '%Y-%m-%d')
+        query_date_end = end_date_convert.date()
 
-    #set min and max dates from database
-    data_start = dt.date(2010, 1,1)
-    data_end = dt.date(2017, 8,23)
+    #if date format is wrong
+    except ValueError:
+        return jsonify({"error": "Date format incorrect"}), 404
+
+    # Create our session (link) from Python to the DB
+    session = Session(engine)
+
+    #find first date in the database:
+    first_date = session.query(Measurement.date).order_by(Measurement.date).first()
+
+    # source: https://stackoverflow.com/questions/23324266/converting-string-to-date-object-without-time-info
+    #Create datetime object and then convert to date object
+    first_date_convert = dt.datetime.strptime(first_date[0], '%Y-%m-%d')
+    first_date_convert = first_date_convert.date()
+
+    #find last date in the database:
+    last_date = session.query(Measurement.date).order_by(Measurement.date.desc()).first()
+
+    # source: https://stackoverflow.com/questions/23324266/converting-string-to-date-object-without-time-info
+    #Create datetime object and then convert to date object
+    last_date_convert = dt.datetime.strptime(last_date[0], '%Y-%m-%d')
+    last_date_convert = last_date_convert.date()
 
     #determine if user date is within database range
-    if (query_date_start < data_start) | (query_date_start > data_end) |(query_date_end < data_start) | (query_date_end > data_end):
+    if (query_date_start < first_date_convert) | (query_date_start > last_date_convert) |(query_date_end < first_date_convert) | (query_date_end > last_date_convert):
+        #close session
+        session.close()
+        #return error message
         return jsonify({"error": "Date not found."}), 404
-    
+        
     else:
-
-        # Create our session (link) from Python to the DB
-        session = Session(engine)
         
         #lowest temp recorded for most active station
         lowest_temp = session.query(func.min(Measurement.tobs)).\
@@ -256,7 +299,6 @@ def temp_start_end (start, end):
 
         #jsonify dictionary result and return
         return jsonify(temp_info_dict)
-
 
 if __name__ == '__main__':
     app.run(debug=True)
