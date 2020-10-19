@@ -82,9 +82,10 @@ Finally, an analysis of rainfall was performed.
 
 ## Files Included
 
-* Images folder - included images pertaining to the Flask API 
+* Images folder - includes images pertaining to the Flask API 
 * Resources folder - includes sqlite file
-* climate_AP jupyter notebook file, which includes Precipitaion analysis, Station Analysis, Temperature Analysis I and II, and Daily Rainfall Average Analysis
+* climate_AP jupyter notebook file, which includes Precipitaion Analysis, Station Analysis, Temperature Analysis I and II, and Daily Rainfall Average Analysis
+    * All visualizations can be seen in this file
 * app.py which included all code to create and launch Flask API routes
 
 
