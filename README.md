@@ -48,9 +48,11 @@ The routes created by the Flask API include the following:
     * Calculates the TMIN, TAVG, and TMAX for dates between the start and end date inclusive
   
 Notes:
-1. For the precipitation dictionary that is returned, this was based on the query performed in the jupyter notebook task for the Precipitation Analysis. Therefore, all stations were used. Since this challenge asked us to specifically "Convert the query results to a dictionary using date as the key and prcp as the value" this means that only one value was given per date, even if multiple stations reported precipitation on a particular date. The dictionary key (in this case, date) must be unique, and therefore, each time a repeat date is added to the dictionary, it just overwrites the previous one.
+* For the precipitation dictionary that is returned, this was based on the query performed in the jupyter notebook task for the Precipitation Analysis. Therefore, all stations were used. Since this challenge asked us to specifically "Convert the query results to a dictionary using date as the key and prcp as the value" this means that only one value was given per date, even if multiple stations reported precipitation on a particular date. The dictionary key (in this case, date) must be unique, and therefore, each time a repeat date is added to the dictionary, it just overwrites the previous one.
 
-2. For the routes with user input dates, the data from all the stations for the requested date range was used, since no specific station was specified in the challenge details.
+* For the routes with user input dates, the data from all the stations for the requested date range was used, since no specific station was specified in the challenge details.
+
+* To launch Flask API, the user must use command python app.py in a terminal window. Then click on the highlighted content in below image:
 
 
 ## Some important notes:
