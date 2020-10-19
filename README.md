@@ -6,7 +6,30 @@ This challenge started with completing an analysis of climate data from a sqlite
 
 ### Python and SQL Alchemy Analysis of Climate Data
 
-To start, 
+#### Precipitation Analysis
+
+The following actions were completed using the precipitation data:
+
+* Retrieve the last 12 months of precipitation data
+* Select only the date and prcp values
+* Load the query results into a Pandas DataFrame and set the index to the date column
+* Sort the DataFrame values by date.
+* Plot the results using the DataFrame plot method
+* Print the summary statistics for the precipitation data
+
+#### Station Analysis
+
+The following actions were completed using the station data:
+
+* Calculate the total number of stations
+* Find the most active stations
+* List the stations and observation counts in descending order
+* Find the station with the highest number of observations
+* Retrieve the last 12 months of temperature observation data (TOBS)
+* Filter by the station with the highest number of observations
+* Plot the results as a histogram with bins=12
+
+
 
 ## Some important notes:
 
