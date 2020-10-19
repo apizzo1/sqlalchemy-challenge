@@ -38,7 +38,7 @@ The routes created by the Flask API include the following:
 * / - home page, which tells the user what routes are available
 * /api/v1.0/precipitation - Converts the precipitation query results from above to a dictionary using date as the key and prcp as the value
     * JSON representation of the dictionary is returned
-* /api/v1.0/stations - returns a dictionary of stations from the dataset
+* /api/v1.0/stations - returns a JSON list of stations from the dataset
 * /api/v1.0/tobs - Query the dates and temperature observations of the most active station for the last year of data and returns a JSON list of temperature observations (TOBS) for the previous year
 * /api/v1.0/\<start> 
     * Calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date
