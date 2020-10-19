@@ -52,8 +52,9 @@ Notes:
 
 * For the routes with user input dates, the data from all the stations for the requested date range was used, since no specific station was specified in the challenge details.
 
-* To launch Flask API, the user must use command python app.py in a terminal window. Then click on the highlighted content in below image:
+* To launch Flask API, the user must use command python app.py in a terminal window. Then, the user must click on the highlighted content seen in below image:
 
+![Launching Flask API](Images/Launch_Flask_API.PNG)
 
 ## Some important notes:
 
