@@ -56,8 +56,10 @@ Notes:
 
 ![Launching Flask API](Images/Launch_Flask_API_image.PNG)
 
-## Some important notes:
+## Other Analyses
 
-1. For Temperature Analysis I, I decided to use a paired t-test. This is because the data is based on the same stations in the same locations, but at different times of the year. The data is based on the same groups and therefore a paired test should be used. My t-test indicated a value of 0.00012. This indicates that the difference in means between the temperature averages in June and the temperature averages in December is statistically significant.
+A closer look was taken at whether a meaningful difference in temperature is seen in Hawaii over the course of the year, specifically, June and December. To do this, the average temperature in June and December for all stations across all available years was calculated. Next, a paired t-test was used to determine whether the difference in temperature mean between June and December was statistically significant. This test was used because the data is based on the same stations in the same locations, but at different times of the year. The data is based on the same groups and therefore a paired test should be used. The t-test indicated a value of 0.00012. This indicates that the difference in means between the temperature averages in June and the temperature averages in December is statistically significant.
+
+## Some important notes:
 
 2. I only used the Stations.csv for the analysis in Temperature Analysis II - in this section, I performed a join on the Measurement and Station data sets so I could return the station names, as well as their IDs. In all other sections, I only returned station IDs, since returning the station name did not seem to be needed.
