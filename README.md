@@ -40,9 +40,9 @@ The routes created by the Flask API include the following:
     * JSON representation of the dictionary is returned
 * /api/v1.0/stations - returns a dictionary of stations from the dataset
 * /api/v1.0/tobs - Query the dates and temperature observations of the most active station for the last year of data and returns a JSON list of temperature observations (TOBS) for the previous year
-* /api/v1.0/<start> 
+* /api/v1.0/\<start> 
     * Calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date
-* /api/v1.0/<start> and /api/v1.0/<start>/<end> 
+* /api/v1.0/\<start> and /api/v1.0/\<start>/\<end> 
     * Calculates the TMIN, TAVG, and TMAX for dates between the start and end date inclusive
   
 Notes:
