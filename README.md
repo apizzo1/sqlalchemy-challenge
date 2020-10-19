@@ -54,7 +54,7 @@ Notes:
 
 * To launch Flask API, the user must use command python app.py in a terminal window. Then, the user must click on the highlighted content seen in below image:
 
-![Launching Flask API](Images/Launch_Flask_API.PNG)
+![Launching Flask API](Images/Launch_Flask_API_image.PNG)
 
 ## Some important notes:
 
