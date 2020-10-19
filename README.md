@@ -35,7 +35,9 @@ The following actions were completed using the station data:
 
 The routes created by the Flask API include the following:
 
-* / - home page, which tells the user what routes are available
+![Flask Home Page](Images/Home_page.PNG)
+
+* / - home page, which tells the user what routes are available (see above image)
 * /api/v1.0/precipitation - Converts the precipitation query results from above to a dictionary using date as the key and prcp as the value
     * JSON representation of the dictionary is returned
 * /api/v1.0/stations - returns a JSON list of stations from the dataset
