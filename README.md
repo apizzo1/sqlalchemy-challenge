@@ -2,7 +2,7 @@
 
 ## Challenge Details
 
-This challenge started with completing an analysis of climate data from a sqlite file using Python and SQL Alchemy. Next, a Flask API was created to display the results of the climate analysis that was completed.
+This challenge started with completing an analysis of Hawaii climate data from a sqlite file using Python and SQL Alchemy. Next, a Flask API was created to display the results of the climate analysis that was completed.
 
 ### Python and SQL Alchemy Analysis of Climate Data
 
@@ -70,7 +70,7 @@ Using the calc_temps function, the min, avg, and max temperatures were calculate
 
 Next, the min, avg, and max temperatures were plotted from your previous query as a bar chart, using the average temperature as the bar height and the peak-to-peak (TMAX-TMIN) value as the y error bar (YERR).
 
-### Daily Rainfall Average
+### Daily Rainfall Average Analysis
 
 Finally, an analysis of rainfall was performed.
 
@@ -79,4 +79,12 @@ Finally, an analysis of rainfall was performed.
     * A function called daily_normals was included in the starter code given in this challenge, which will calculate the daily normals for a specific date
 * The list of daily normals was loaded into a Pandas DataFrame and the index was set to the date
 * Pandas was used to plot an area plot (stacked=False) for the daily normals
+
+## Files Included
+
+* Images folder - included images pertaining to the Flask API 
+* Resources folder - includes sqlite file
+* climate_AP jupyter notebook file, which includes Precipitaion analysis, Station Analysis, Temperature Analysis I and II, and Daily Rainfall Average Analysis
+* app.py which included all code to create and launch Flask API routes
+
 
