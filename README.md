@@ -58,8 +58,25 @@ Notes:
 
 ## Other Analyses
 
+### Temperature Analysis I
+
 A closer look was taken at whether a meaningful difference in temperature is seen in Hawaii over the course of the year, specifically, June and December. To do this, the average temperature in June and December for all stations across all available years was calculated. Next, a paired t-test was used to determine whether the difference in temperature mean between June and December was statistically significant. This test was used because the data is based on the same stations in the same locations, but at different times of the year. The data is based on the same groups and therefore a paired test should be used. The t-test indicated a value of 0.00012. This indicates that the difference in means between the temperature averages in June and the temperature averages in December is statistically significant.
 
-## Some important notes:
+### Temperature Analysis II
 
-2. I only used the Stations.csv for the analysis in Temperature Analysis II - in this section, I performed a join on the Measurement and Station data sets so I could return the station names, as well as their IDs. In all other sections, I only returned station IDs, since returning the station name did not seem to be needed.
+A function called calc_temps was included in the starter code for this challenge, which will accept a start date and end date in the format %Y-%m-%d. The function will return the minimum, average, and maximum temperatures for that range of dates.
+
+Using the calc_temps function, the min, avg, and max temperatures were calculated for a date range of my choosing, to signify a vacation timeframe. Note: the data files provided only included data through 2017, so 2017 dates were chosen for this analysis.
+
+Next, the min, avg, and max temperatures were plotted from your previous query as a bar chart, using the average temperature as the bar height and the peak-to-peak (TMAX-TMIN) value as the y error bar (YERR).
+
+### Daily Rainfall Average
+
+Finally, an analysis of rainfall was performed.
+
+* The rainfall per weather station using the vacation timeframe dates was calculated
+* The daily normals (averages for the min, avg, and max temperatures) were calculated
+    * A function called daily_normals was included in the starter code given in this challenge, which will calculate the daily normals for a specific date
+* The list of daily normals was loaded into a Pandas DataFrame and the index was set to the date
+* Pandas was used to plot an area plot (stacked=False) for the daily normals
+
