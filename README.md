@@ -1,5 +1,13 @@
 #  sqlalchemy-challenge
 
+## Challenge Details
+
+This challenge started with completing an analysis of climate data from a sqlite file using Python and SQL Alchemy. Next, a Flask application was created to display the results of the climate analysis that was completed.
+
+### Python and SQL Alchemy Analysis of Climate Data
+
+To start, 
+
 ## Some important notes:
 
 1. For Temperature Analysis I, I decided to use a paired t-test. This is because the data is based on the same stations in the same locations, but at different times of the year. The data is based on the same groups and therefore a paired test should be used. My t-test indicated a value of 0.00012. This indicates that the difference in means between the temperature averages in June and the temperature averages in December is statistically significant.
